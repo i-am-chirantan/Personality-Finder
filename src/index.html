@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personality </title>
+    <link rel="stylesheet" href="../style/design.css">
+</head>
+
+<body>
+
+    <section>
+        <h1>WHAT DOES YOUR NAME SAY ABOUT YOUR PERSONALITY?</h1>
+        <div class="centerdiv">
+            <div class="details">
+                <label>Enter your Name</label>
+                <input type="text" name="" id="nameid">
+            </div>
+
+            <div class="image">
+                <img src="../img/image.jpeg" alt="No Image Found" width="300" height="200" class="imgchange">
+            </div>
+
+            <div>
+                <button id="thisbutton">Click Me</button>
+            </div>
+        </div>
+    </section>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <script>
+        $(document).ready(function() {
+            $('#thisbutton').click(function() {
+                let name = $('#nameid').val();
+                if (name.length == 0) {
+                    name = 'John';
+                }
+                alert(name);
+                $('.imgchange').attr('src', `http://joeschmoe.io/api/v1/${name}`)
+            })
+        });
+    </script>
+</body>
+
+</html>
